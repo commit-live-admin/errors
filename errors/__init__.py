@@ -10,3 +10,17 @@ def notify_webapp(case=None):
             return response
         return wraps(view_func)(_decorator)
     return _notify_webapp
+
+
+@notify_webapp(case="SUCCESS")
+def succeed(function_name):
+    return "Test case passed for " + function_name
+
+@notify_webapp(case="FunctionNotFound")
+def no_function_found(function_name):
+    return "No function found. Please define function with name " + function_name
+
+
+@notify_webapp(case="IncorrectOutput")
+def incorrect_output():
+    return "Incorrect output return by function"
