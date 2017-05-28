@@ -22,5 +22,5 @@ def no_function_found(function_name):
 
 
 @notify_webapp(case="IncorrectOutput")
-def incorrect_output():
+def incorrect_output(s = "incorrect output"):
     return "Incorrect output return by function"
